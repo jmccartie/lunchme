@@ -1,0 +1,6 @@
+rvm:
+  - 1.9.2
+bundler_args: --without development:production
+env:
+  - RACK_ENV=test
+script: "bundle exec rake spec"
