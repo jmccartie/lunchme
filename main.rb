@@ -33,7 +33,7 @@ get '/' do
     response = client.search(request)
 
     if response["message"]["text"] == "OK"
-      response["businesses"].map { |r| data << {name: r["name"], address: r["address1"], rating: r["avg_rating"]} }
+      response["businesses"].map { |r| data << {name: r["name"], address: r["address1"], rating: r["avg_rating"], url: r["url"]} }
     else
       halt 500
     end
