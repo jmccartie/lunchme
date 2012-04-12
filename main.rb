@@ -16,6 +16,7 @@ end
 
 get '/' do
   check_param(:zipcode) 
+  halt 400 if params[:zipcode].to_i == 0
   content_type :json
 
   cache_key = Digest::MD5.hexdigest(params[:zipcode])
